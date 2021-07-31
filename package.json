@@ -1,0 +1,19 @@
+{
+  "name": "saajith-cmd-handler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "discord.js": "^13.0.0-dev.t1627689836.ee3cdc8",
+    "djs-helper-v13": "^1.0.19",
+    "dotenv": "^10.0.0",
+    "path": "^0.12.7"
+  }
+}
