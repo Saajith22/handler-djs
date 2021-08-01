@@ -13,6 +13,9 @@ const client = new Discord.Client({
 
 module.exports = client;
 client.commands = new Discord.Collection();
+client.slash_commands = new Discord.Collection();
 require('./handler/handler');
+require('./handler/slash');
+
 
 client.login(process.env.token);

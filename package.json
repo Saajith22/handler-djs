@@ -1,19 +1,25 @@
 {
-  "name": "saajith-cmd-handler",
+  "name": "handler-djs",
   "version": "1.0.0",
-  "description": "",
+  "description": "A handler for discord.js v13!!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saajith22/handler-djs.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saajith22/handler-djs/issues"
+  },
+  "homepage": "https://github.com/Saajith22/handler-djs#readme",
   "dependencies": {
     "chalk": "^4.1.2",
-    "discord.js": "^13.0.0-dev.t1627689836.ee3cdc8",
-    "djs-helper-v13": "^1.0.19",
-    "dotenv": "^10.0.0",
-    "path": "^0.12.7"
+    "discord.js": "^13.0.0-dev.t1627732975.331a9d3",
+    "djs-helper-v13": "^1.0.20"
   }
 }
