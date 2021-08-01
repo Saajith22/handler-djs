@@ -16,14 +16,16 @@ readdirSync('./slashCommands').forEach(async (dir) => {
         let file = require(`../slashCommands/${dir}/${cmd}`);
 
         let name = file.name || "No command name.";
-        let des = file.description || "No Description";
+        let description = file.description || "No Description";
 
         const data = {
             name,
-            description: des
-        };
-        
+            description
+        }
+
         let option = name == "No command name." ? '❌' : '✅';
+
+        console.log(`Loaded Slash Command ${option} | ${name}`);
 
         if (option == '✅') {
             setTimeout(async () => {
@@ -35,8 +37,6 @@ readdirSync('./slashCommands').forEach(async (dir) => {
                 await client.guilds.cache.get('801843417154846720').commands.create(data);
             }, 2500);
         }
-
-        console.log(`Loaded Slash Command ${option} | ${name}`);
     });
 });
 
