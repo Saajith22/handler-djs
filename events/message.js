@@ -12,8 +12,11 @@ module.exports = (client) => {
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         if (!message.content || !message.content.toLowerCase().startsWith(prefix)) return;
         const cmd = args.shift();
-        const command = client.commands.get(cmd);
-        if (!command) return;
+        let command = client.commands.get(cmd);
+        if (!command)
+            command = client.aliases.get(cmd);
+        if(command  == undefined) return;
+
         command.run(client, message, args, Discord);
     })
 }

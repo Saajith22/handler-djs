@@ -17,10 +17,12 @@ readdirSync('./slashCommands').forEach(async (dir) => {
 
         let name = file.name || "No command name.";
         let description = file.description || "No Description";
+        let options = file.options || [];
 
         const data = {
             name,
-            description
+            description,
+            options
         }
 
         let option = name == "No command name." ? '❌' : '✅';

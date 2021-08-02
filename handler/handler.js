@@ -20,6 +20,7 @@ readdirSync('./commands').forEach(async (dir) => {
 
         let name = file.name || "No command name.";
         let description = file.description || "No Description";
+        let aliases = file.aliases || [];
         let run = file.run;
 
         let data = {
@@ -33,6 +34,15 @@ readdirSync('./commands').forEach(async (dir) => {
 
         if (name != "No command name.") {
             client.commands.set(name, data);
+            if(aliases.length < 1) return;
+            aliases.forEach(alias => {
+                client.aliases.set(alias, data)
+            })
+        } else {
+            if(aliases.length < 1) return;
+            aliases.forEach(alias => {
+                client.aliases.set(alias, data)
+            })
         }
 
         console.log(`Loaded Command ${option} | ${name}`);
