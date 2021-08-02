@@ -12,8 +12,8 @@ module.exports = (client) => {
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         if (!message.content || !message.content.toLowerCase().startsWith(prefix)) return;
         const cmd = args.shift();
-        const command = client.commands.has(cmd) ? client.commands.get(cmd) : false;
+        const command = client.commands.get(cmd);
         if (!command) return;
-        runnign.run(client, message, args, Discord);
+        command.run(client, message, args, Discord);
     })
 }

@@ -19,12 +19,12 @@ readdirSync('./commands').forEach(async (dir) => {
 
 
         let name = file.name || "No command name.";
-        let des = file.description || "No Description";
+        let description = file.description || "No Description";
         let run = file.run;
 
         let data = {
             name,
-            des,
+            description,
             run
         };
 
@@ -34,7 +34,7 @@ readdirSync('./commands').forEach(async (dir) => {
         if (name != "No command name.") {
             client.commands.set(name, data);
         }
-        
+
         console.log(`Loaded Command ${option} | ${name}`);
     });
 });

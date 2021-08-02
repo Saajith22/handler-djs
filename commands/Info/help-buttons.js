@@ -10,7 +10,7 @@ const prefix = process.env.prefix;
 let color = "#36393f";
 const {
     button_pagination
-} = require('djs-helper-v13');
+} = require('../../functions/dank');
 
 module.exports = {
     name: "help-buttons",
@@ -63,9 +63,11 @@ module.exports = {
 
                     e = e.replace('.js', '');
 
+                    const des = client.commands.get(e).description;
+
                     obyy = {
                         name: `\`${e}\``,
-                        value: 'No description',
+                        value: des || 'No description',
                         inline: true
                     }
 
