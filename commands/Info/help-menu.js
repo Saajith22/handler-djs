@@ -80,7 +80,7 @@ module.exports = {
 
             const embed = new MessageEmbed()
                 .setTitle("Help Menu:")
-                .setDescription(`>>> My prefix is ${client.prefix}\nUse the menu, or use \`${client.prefix}help [category]\` to view commands base on their category!\nHelp menu made by \`Saajith#6969\``)
+                .setDescription(`>>> My prefix is ${prefix}\nUse the menu, or use \`${prefix}help [category]\` to view commands base on their category!\nHelp menu made by \`Saajith#6969\``)
                 .addFields(categories)
                 .setFooter(
                     `Requested by ${message.author.tag}`,

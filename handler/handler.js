@@ -22,11 +22,15 @@ readdirSync('./commands').forEach(async (dir) => {
         let description = file.description || "No Description";
         let aliases = file.aliases || [];
         let run = file.run;
+        let cooldown = file.cooldown || false;
+        let usage = file.usage || "No Usage";
 
         let data = {
             name,
             description,
-            run
+            run,
+            cooldown,
+            usage
         };
 
 
