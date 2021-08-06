@@ -36,10 +36,8 @@ readdirSync('./slashCommands').forEach(async (dir) => {
                     run: file.run
                 });
 
-                client.guilds.fetch('801843417154846720').then(async gui => {
-                    await gui.commands.create(data);
-                });
-            }, 6500);
+                await client.guilds.cache.get('801843417154846720').commands.create(data);
+            }, 2500);
         }
     });
 });

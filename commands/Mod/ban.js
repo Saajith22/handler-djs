@@ -1,6 +1,6 @@
 module.exports = {
     name: 'ban',
-    run: async(client, message, args, Discord) => {
+    run: async(client, message, args) => {
         message.channel.send('Hello!')
     }
 }

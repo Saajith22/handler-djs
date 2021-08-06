@@ -24,7 +24,7 @@ module.exports = {
      * @param {String} args 
      * @returns 
      */
-    run: async (client, message, args, Discord) => {
+    run: async (client, message, args) => {
 
 
         let cots = [];
