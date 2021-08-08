@@ -9,7 +9,7 @@ module.exports = (client) => {
             let cmd = client.slash_commands.get(interaction.commandName);
             if (!cmd) return;
 
-            await interaction.defer().catch(e => {});
+            await interaction.deferReply().catch(e => {});
 
             let options = interaction.options._hoistedOptions;
 
