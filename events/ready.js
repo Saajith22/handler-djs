@@ -1,10 +1,13 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+const client = require("../index");
 
-/**
- * @param {Discord.Client} client
- */
-module.exports = (client) => {
-    client.on('ready', async () => {
-        console.log(client.user.username + ' is online!');
-    })
-}
+client.on("ready", async () => {
+  const invite = client.generateInvite({
+    scopes: ["applications.commands", "bot"],
+    permissions: Discord.Permissions.FLAGS.ADMINISTRATOR,
+  });
+
+  //console.log(invite);
+  
+  console.log(client.user.username + " is online!");
+});

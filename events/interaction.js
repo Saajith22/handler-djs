@@ -1,19 +1,17 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+const client = require("../index");
 
-/**
- * @param {Discord.Client} client
- */
-module.exports = (client) => {
-    client.on('interactionCreate', async (interaction) => {
-        if (interaction.isCommand()) {
-            let cmd = client.slash_commands.get(interaction.commandName);
-            if (!cmd) return;
+client.on("interactionCreate", async (interaction) => {
+  if (interaction.isCommand()) {
+    await interaction.deferReply().catch((e) => {
+      console.log(e);
+    });
 
-            await interaction.deferReply().catch(e => {});
+    let cmd = client.slash_commands.get(interaction.commandName);
+    if (!cmd);
 
-            let options = interaction.options._hoistedOptions;
+    let options = interaction.options.data;
 
-            cmd.run(client, interaction, options);
-        }
-    })
-}
+    cmd.run(client, interaction, options);
+  }
+});
